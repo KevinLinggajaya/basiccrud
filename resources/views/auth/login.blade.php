@@ -1,7 +1,7 @@
 @extends('layout.blank')
 
 @section('title')
-Printerous
+	{{ env('TITLE') }} - Login
 @stop
 
 @section('content')
@@ -20,21 +20,18 @@ Printerous
 							</ul>
 						</div>
 					@endif
-
-					<form class="form-horizontal" role="form" method="POST" action="/auth/login">
-						<input type="hidden" name="_token" value="{{ csrf_token() }}">
-
+					{!! Form::open(array('url' => action('Auth\AuthController@postLogin'), 'class' => 'form form-horizontal', 'role' => 'form', 'method' => 'POST')) !!}
 						<div class="form-group">
-							<label class="col-md-4 control-label">E-Mail Address</label>
+							{!! Form::label("email", "E-Mail Address", ['class' => 'col-md-4 control-label'])!!}
 							<div class="col-md-6">
-								<input type="email" class="form-control" name="email" value="{{ old('email') }}">
+								{!! Form::text('email', old('email'), ['class' => 'form-control', 'autofocus' => 'autofocus']) !!}
 							</div>
 						</div>
 
 						<div class="form-group">
-							<label class="col-md-4 control-label">Password</label>
+							{!! Form::label("password", "Password", ['class' => 'col-md-4 control-label'])!!}
 							<div class="col-md-6">
-								<input type="password" class="form-control" name="password">
+								{!! Form::text('password', old('password'), ['class' => 'form-control']) !!}
 							</div>
 						</div>
 
@@ -42,7 +39,7 @@ Printerous
 							<div class="col-md-6 col-md-offset-4">
 								<div class="checkbox">
 									<label>
-										<input type="checkbox" name="remember"> Remember Me
+										{!! Form::checkbox('remember', 'false') !!} Remember Me
 									</label>
 								</div>
 							</div>
@@ -50,12 +47,10 @@ Printerous
 
 						<div class="form-group">
 							<div class="col-md-6 col-md-offset-4">
-								<button type="submit" class="btn btn-primary" style="margin-right: 15px;">
-									Login
-								</button>
+								{!! Form::submit('Login', ['class' => 'btn btn-primary']) !!}
 							</div>
 						</div>
-					</form>
+					{!! Form::close() !!}
 				</div>
 			</div>
 		</div>

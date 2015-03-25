@@ -1,6 +1,6 @@
 <?php namespace basiccrud\Services;
 
-use basiccrud\User;
+use basiccrud\Model\User;
 use Validator;
 use Illuminate\Contracts\Auth\Registrar as RegistrarContract;
 

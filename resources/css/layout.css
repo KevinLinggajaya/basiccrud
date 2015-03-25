@@ -1,0 +1,54 @@
+html {
+	position: relative;
+	height: 100%;
+}
+
+body {
+	padding:50px 0 34px 0;
+	height: 100%;
+}
+
+.panel.login {
+	margin:40px 0 0 0;
+}
+
+.navbar {
+	margin:0;
+}
+
+.sidebar {
+	position: fixed;
+	padding: 0;
+	background: #E0E0E0;
+	z-index: 1000;
+	display: block;
+	overflow-x: hidden;
+	overflow-y: auto;
+	min-height: 100%;
+}
+
+#tpl-content {
+	min-height: 100%;
+}
+
+#tpl-footer {
+	position:absolute;
+	bottom: 0;
+	width: 100%;
+	margin:0;
+	z-index: 2000;
+}
+
+.footer {
+	padding:10px;
+	background: #555555;
+	text-align: center;
+	color:#FFFFFF;
+	font-size: 10px;
+}
+
+@media ( max-height : 350px) {
+	.sidebar {
+		position: relative;
+	}
+}

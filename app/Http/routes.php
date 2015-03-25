@@ -13,10 +13,12 @@
 
 Route::get('/', ['as' => 'auth/login', 'uses' => 'Auth\AuthController@getLogin']);
 
-Route::get('home', 'HomeController@index');
-
-
-
 Route::controllers([
 	'auth' => 'Auth\AuthController'
 ]);
+
+Route::group(['prefix' => 'admin'], function(){ 
+	Route::get('/', 'HomeController@index');
+
+	Route::resource('products', 'ProductController', ['except' => 'show']);
+});
