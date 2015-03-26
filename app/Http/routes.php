@@ -23,4 +23,7 @@ Route::group(['prefix' => 'admin'], function(){
 	Route::resource('products', 'ProductController', ['except' => 'show']);
 
 	Route::resource('products/{productId}/details', 'ProductDetailController', ['except' => 'show']);
+
+	Route::resource('orders', 'OrderController');
+
 });
