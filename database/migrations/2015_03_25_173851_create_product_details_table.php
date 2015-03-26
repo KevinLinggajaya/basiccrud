@@ -15,7 +15,7 @@ class CreateProductDetailsTable extends Migration {
 		Schema::create('product_details', function(Blueprint $table){
 			$table->increments('id');
 			$table->integer('product_id')->unsigned();
-			$table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
+			$table->foreign('product_id')->references('id')->on('products')->onDelete('CASCADE');
 			$table->boolean('is_enabled')->nullable();
 			$table->string('color')->nullable();
 			$table->string('size');
