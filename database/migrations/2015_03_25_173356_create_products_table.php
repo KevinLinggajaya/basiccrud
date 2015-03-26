@@ -14,6 +14,7 @@ class CreateProductsTable extends Migration {
 	{
 		Schema::create('products', function(Blueprint $table){
 			$table->increments('id');
+			$table->boolean('is_enabled')->nullable();
 			$table->string('name');
 			$table->string('code',20);
 			$table->text('description')->nullable();

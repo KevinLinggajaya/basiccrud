@@ -20,6 +20,7 @@
 					<th>Name</th>
 					<th>Code</th>
 					<th class="text-center">Total Variation</th>
+					<th class="text-center">Is Enabled</th>
 					<th>Action</th>
 				</tr>
 			</thead>
@@ -29,9 +30,17 @@
 					<td>{{$product->name}}</td>
 					<td>{{$product->code}}</td>
 					<td class="text-center">
-						{{$product->variation}}
+						<a href="{{ action('ProductDetailController@index', $product->id) }}">{{$product->productDetails()->count()}}</a>
 					</td>
-					<td class="col-sm-1 nowrap">
+					<td class="text-center"> 
+						@if($product->is_enabled)
+							<span class="glyphicon glyphicon-ok true"></span>
+						@else
+							<span class="glyphicon glyphicon-remove false"></span>	
+						@endif
+					</td>
+					<td class="col-sm-2 nowrap">
+						<a class="btn btn-primary btn-xs" href="{{ action('ProductDetailController@index', $product->id) }}">View Details</a>
 						<a class="btn btn-warning btn-xs" href="{{ action('ProductController@edit', $product->id) }}" >Edit</a> 
 			   			{!! Form::open(array('url' => action('ProductController@destroy', $product->id), 'class' => 'form-delete')) !!}
 			   			{!! Form::hidden('_method', 'delete') !!}

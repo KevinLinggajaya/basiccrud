@@ -1,6 +1,7 @@
 <?php namespace basiccrud\Http\Controllers;
 
 use basiccrud\Http\Requests;
+use basiccrud\Http\Requests\ProductRequest;
 use basiccrud\Http\Controllers\Controller;
 use basiccrud\Model\Product;
 
@@ -41,9 +42,17 @@ class ProductController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(ProductRequest $request)
 	{
-		//
+		$product = new Product();
+		$product->is_enabled = $request->is_enabled ? true : false;
+		$product->name = $request->name;
+		$product->code = $request->code;
+		$product->description = $request->description;
+
+		$product->save();
+		$request->flash();
+		return redirect(action('ProductController@index'));
 	}
 
 	/**
@@ -65,7 +74,8 @@ class ProductController extends Controller {
 	 */
 	public function edit($id)
 	{
-		//
+		$product = Product::findOrFail($id);
+		return view('products.edit', compact('product'));
 	}
 
 	/**
@@ -74,9 +84,17 @@ class ProductController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update(ProductRequest $request, $id)
 	{
-		//
+		$product = Product::findOrFail($id);
+		$product->is_enabled = $request->is_enabled ? true : false;
+		$product->name = $request->name;
+		$product->code = $request->code;
+		$product->description = $request->description;
+
+		$product->save();
+		$request->flash();
+		return redirect(action('ProductController@index'));
 	}
 
 	/**
@@ -87,7 +105,8 @@ class ProductController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		//
+		Product::destroy($id);
+		return redirect(action('ProductController@index'));
 	}
 
 }

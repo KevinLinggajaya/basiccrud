@@ -9,8 +9,9 @@ html {
 }
 
 body {
+	position: relative;
 	padding:50px 0 34px 0;
-	height: 100%;
+	min-height: 100%;
 }
 
 h1, h2 {
@@ -54,6 +55,23 @@ h1, h2 {
 	text-align: center;
 	color:#FFFFFF;
 	font-size: 10px;
+}
+
+.form .has-error small.error {
+	color:#a94442;
+	font-style: italic;
+}
+
+.form-delete {
+	display:inline;
+}
+
+span.true {
+	color:#10C900;
+}
+
+span.false {
+	color:#FF0000;
 }
 
 @media ( max-height : 350px) {

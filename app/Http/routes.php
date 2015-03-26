@@ -21,4 +21,6 @@ Route::group(['prefix' => 'admin'], function(){
 	Route::get('/', 'HomeController@index');
 
 	Route::resource('products', 'ProductController', ['except' => 'show']);
+
+	Route::resource('products/{productId}/details', 'ProductDetailController', ['except' => 'show']);
 });

@@ -16,7 +16,8 @@ class CreateProductDetailsTable extends Migration {
 			$table->increments('id');
 			$table->integer('product_id')->unsigned();
 			$table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
-			$table->string('color');
+			$table->boolean('is_enabled')->nullable();
+			$table->string('color')->nullable();
 			$table->string('size');
 			$table->integer('quantity');
 			$table->decimal('weight',10,2);
