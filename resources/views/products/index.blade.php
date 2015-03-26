@@ -40,7 +40,7 @@
 						@endif
 					</td>
 					<td class="col-sm-2 nowrap">
-						<a class="btn btn-primary btn-xs" href="{{ action('ProductDetailController@index', $product->id) }}">View Details</a>
+						<a class="btn btn-primary btn-xs" href="{{ action('ProductDetailController@index', $product->id) }}">Details</a>
 						<a class="btn btn-warning btn-xs" href="{{ action('ProductController@edit', $product->id) }}" >Edit</a> 
 			   			{!! Form::open(array('url' => action('ProductController@destroy', $product->id), 'class' => 'form-delete')) !!}
 			   			{!! Form::hidden('_method', 'delete') !!}
