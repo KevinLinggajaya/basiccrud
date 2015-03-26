@@ -7,7 +7,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="/">{{ env('TITLE') }}</a>
+			<a class="navbar-brand" href="{{ action('HomeController@index') }}">{{ env('TITLE') }}</a>
 		</div>
 		<div class="collapse navbar-collapse" id="navbar-collapsed">
 			<ul class="nav navbar-nav navbar-right">
