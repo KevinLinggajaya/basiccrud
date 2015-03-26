@@ -2,6 +2,7 @@
 
 use basiccrud\Http\Requests;
 use basiccrud\Http\Controllers\Controller;
+use basiccrud\Model\Product;
 
 use Illuminate\Http\Request;
 
@@ -20,7 +21,8 @@ class ProductController extends Controller {
 	 */
 	public function index()
 	{
-		//
+		$products = Product::orderBy('name')->paginate(20);
+		return view('products.index', compact('products'));
 	}
 
 	/**
@@ -30,7 +32,8 @@ class ProductController extends Controller {
 	 */
 	public function create()
 	{
-		//
+		$product = new Product();
+		return view('products.create', compact('product'));
 	}
 
 	/**
