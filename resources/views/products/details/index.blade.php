@@ -10,6 +10,7 @@
 	<hr>
 	<div class="panel panel-default">
 		<div class="panel-heading">
+			<a class="btn btn-info" href="{{ action('ProductController@index') }}"><span class="glyphicon glyphicon-arrow-left"></span> Back to Product List</a>
 			<a class="btn btn-primary" href="{{ action('ProductDetailController@create', $product->id) }}">Add New Product Details</a>
 		</div>
 	</div>

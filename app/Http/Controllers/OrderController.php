@@ -35,7 +35,6 @@ class OrderController extends Controller {
 		$lastOrder = Order::withTrashed()->orderBy('created_at', 'DESC')->first();
 		$lastOrderNo = $lastOrder ? $lastOrder->order_no+1 : 1;
 		$order = new Order();
-		$order->created_at = Carbon::now();
 		$order->total_price = 0;
 		$order->order_no = str_pad(intval($lastOrderNo), 10, '0', STR_PAD_LEFT);
 		$products = Product::with('productDetails')->whereIsEnabled(true)->orderBy('name')->get();

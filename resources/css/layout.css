@@ -21,6 +21,10 @@ h1, h2 {
 	margin:0;
 }
 
+.nav .active {
+	background:#EEEEEE;
+}
+
 .sidebar {
 	position: fixed;
 	padding: 0;

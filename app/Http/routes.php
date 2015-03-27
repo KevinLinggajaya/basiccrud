@@ -26,4 +26,5 @@ Route::group(['prefix' => 'admin'], function(){
 
 	Route::resource('orders', 'OrderController');
 
+	Route::resource('reports', 'ReportController', ['only' => ['index', 'show']]);
 });
