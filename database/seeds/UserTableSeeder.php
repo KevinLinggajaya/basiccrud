@@ -13,14 +13,9 @@ class UserTableSeeder extends Seeder {
 		DB::table('users')->delete();
          //insert some dummy records
 		DB::table('users')->insert(array(
-			array('name'=>'Kevin',
-				  'email'=>'kevin.linggajaya@gmail.com',
-				  'password'=> Hash::make('qwe123'),
-				  'updated_at'=> Carbon::now()->toDateTimeString(),
-				  'created_at'=> Carbon::now()->toDateTimeString()),
 			array('name'=>'Admin',
-				  'email'=>'admin@printerous.com',
-				  'password'=> Hash::make('qwe123'),
+				  'email'=>'admin@admin.com',
+				  'password'=> Hash::make('admin'),
 				  'updated_at'=> Carbon::now()->toDateTimeString(),
 				  'created_at'=> Carbon::now()->toDateTimeString())
 		));
