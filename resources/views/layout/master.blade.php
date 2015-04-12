@@ -16,7 +16,7 @@
 			<div class="col-md-2 sidebar">
 				@include('layout.menu')
 			</div>
-			<div class="col-md-10 col-xs-12 pull-right">
+			<div class="col-md-10 col-xs-12 pull-right content">
 				@yield('content')
 			</div>
 		</div>

@@ -27,7 +27,7 @@
 	@include('layout.header')
 	<div id="tpl-content" class="container-fluid">
 		<div class="row clearfix">
-			<div class="col-md-12">
+			<div class="col-md-12 content">
 				@yield('content')
 			</div>
 		</div>
