@@ -15,7 +15,11 @@ class Order extends BaseModel {
 	}
 
     public function getCreatedAtAttribute() {
-		return Carbon::createFromTimeStamp(strtotime($this->attributes['created_at']))->toDateTimeString();
+    	if(array_key_exists('created_at',$this->attributes)) {
+			return Carbon::createFromTimeStamp(strtotime($this->attributes['created_at']))->toDateTimeString();
+		} else {
+			return null;
+		}
     }
 
 }
