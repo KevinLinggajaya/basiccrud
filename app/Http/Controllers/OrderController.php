@@ -14,6 +14,11 @@ use DB;
 
 class OrderController extends Controller {
 
+	public function __construct()
+	{
+		$this->middleware('auth');
+	}
+
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -83,6 +88,11 @@ class OrderController extends Controller {
 	 */
 	public function show($id)
 	{
+		$order = Order::findOrFail($id);
+		$products = Product::with('productDetails')
+					->orderBy('name')->get();
+		$product_detail_ids = OrderDetail::whereOrderId($id)->lists('product_detail_id');
+		return view('orders.show', compact('order','products','product_detail_ids'));		
 	}
 
 	/**
