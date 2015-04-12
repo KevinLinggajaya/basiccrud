@@ -41,6 +41,10 @@ h1, h2 {
 	min-height: 100%;
 }
 
+.content {
+	padding-bottom: 20px;
+}
+
 #tpl-content {
 	min-height: 100%;
 }
@@ -78,7 +82,7 @@ span.false {
 	color:#FF0000;
 }
 
-@media ( max-height : 350px) {
+@media ( max-height : 200px) {
 	.sidebar {
 		position: relative;
 	}
