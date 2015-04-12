@@ -9,7 +9,7 @@
 			<p class="form-control-static">{{ $order->order_no }}</p>
 		</div>
 	</div>
-	@if($order->date)
+	@if($order->created_at)
 	<div class="form-group">
 		{!! Form::label("created_at", "Order Date" , ['class' => 'col-md-2 control-label'])!!}
 		<div class="col-md-10">
