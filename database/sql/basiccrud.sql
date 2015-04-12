@@ -6,7 +6,7 @@
 # http://code.google.com/p/sequel-pro/
 #
 # Host: 127.0.0.1 (MySQL 5.6.16)
-# Database: printerous
+# Database: basiccrud
 # Generation Time: 2015-04-12 17:43:58 +0000
 # ************************************************************
 
