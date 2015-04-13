@@ -1,10 +1,13 @@
 Laravel 5 Basic CRUD & Simple Report
-------------------------------------
-## Introduction
-This is a quick project for an interview test that I've got in one of local company.
-Since I think there are still few example on how Laravel 5 do basic CRUD, I put it as public source. Feel free to grab and modify it for your own use.
+====================================
 
-Story of the test :
+## Introduction
+This is a quick project for an interview test that I've got once in one of local company.
+Since I think there were still few example on how Laravel 5 do basic CRUD, I put it as public source. 
+Feel free to grab and modify it for your own use.
+
+**Story of the test :**
+
 1. Create a Laravel project with name of basiccrud
 2. Create a simple login page
 3. After login, please redirect the page to basiccrud/admin
@@ -15,7 +18,7 @@ Story of the test :
 Product name and total product that being sold on certain time frame (montly filter) ordered by the biggest sales.
 
 
-With all the story, validation, style, details, etc etc, it takes me around 15 hours to finished it. 
+With all the story, validation, style, details, etc etc, it takes me around 13-15 hours to finished it. 
 
 ## Requirement
 PHP, Laravel 5 & MySQL
@@ -39,21 +42,30 @@ php artisan migrate --seed
 
 Or you can use predefined data by importing DB using backup SQL :
 ```
-database\sql\basiccrud.sql
+database/sql/basiccrud.sql
 ```
 
-After you configure all DB setup, run the app using
+After you configure all DB setup, run the app using :
 ```bash
 php artisan serve
 ```
 
-Go to your browser and hit the page through this url
+I use Elixir for CSS and JS compiler, you can see all the setup configuration in [here][1]. After finished with the setup, run this command at terminal :
+```bash
+gulp watch
+```
+
+If you want to modify CSS or JS take a look at /resources folder.
+
+Go to your browser and hit the page :
 ```
 http://localhost:8000
 ```
 
-You will see a basic login page before go through the example, input the predefined default email and password 
-```
-email: admin@admin.com
-password: admin
-```
+You will see a basic login page before go through the example, input the predefined default email and password :
+> email: admin@admin.com
+> password: admin
+
+That's all.
+
+[1]:http://laravel.com/docs/5.0/elixir
